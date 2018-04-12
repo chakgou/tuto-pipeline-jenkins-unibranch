@@ -19,7 +19,7 @@ pipeline {
         echo 'test OK'
       }
     }
-    stage('Deliver') {
+    stage('Staging') {
       steps {
         sh './scripts/jenkins/deliver-to-staging.sh'
         input message: 'Finished using the web site for test? (Click "Proceed" to continue)'
