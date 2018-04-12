@@ -20,18 +20,12 @@ pipeline {
       }
     }
     stage('Deliver') {
-      when {
-        branch 'development'
-      }
       steps {
         sh './scripts/jenkins/deliver-to-staging.sh'
         input message: 'Finished using the web site for test? (Click "Proceed" to continue)'
       }
     }
     stage('Deploy') {
-      when {
-        branch 'master'
-      }
       steps {
         echo 'Deploy'
       }
